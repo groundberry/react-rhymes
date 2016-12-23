@@ -1,18 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    const keys = Object.keys(props.rhymes);
+    const index = Math.floor(Math.random() * keys.length);
+    const currentKey = keys[index];
+
+    this.state = {
+      key: currentKey,
+      values: Object.values(props.rhymes)
+    }
+  }
+
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>React Rhymes</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+        <p className="App-key">
+          {this.state.key}
         </p>
+        <ul className="App-values">
+          {this.state.values.map((value) =>
+            <li>{value}</li>
+          )}
+        </ul>
       </div>
     );
   }

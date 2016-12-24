@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
+import Footer from './Footer';
 
 import './App.css';
 
@@ -29,6 +30,7 @@ class App extends Component {
             <li>{value}</li>
           )}
         </ul>
+        <Footer />
       </div>
     );
   }

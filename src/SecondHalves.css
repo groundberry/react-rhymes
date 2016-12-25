@@ -6,15 +6,14 @@
   color: black;
   text-decoration: none;
 }
-
 .SecondHalves a:hover {
   color: #777;
 }
 
 .SecondHalves .correct {
-  color: green;
+  color: green !important;
 }
 
 .SecondHalves .incorrect {
-  color: red;
+  color: red !important;
 }

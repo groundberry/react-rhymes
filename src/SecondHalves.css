@@ -1,0 +1,20 @@
+.SecondHalves {
+  list-style: none;
+}
+
+.SecondHalves a {
+  color: black;
+  text-decoration: none;
+}
+
+.SecondHalves a:hover {
+  color: #777;
+}
+
+.SecondHalves .correct {
+  color: green;
+}
+
+.SecondHalves .incorrect {
+  color: red;
+}

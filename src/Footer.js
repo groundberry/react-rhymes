@@ -2,8 +2,13 @@ import React, { Component } from 'react';
 
 class Footer extends Component {
   render() {
+    const today = new Date();
+    const year = today.getFullYear();
+
     return (
-      <h3 className="Footer">© Groundberry 2016</h3>
+      <small className="Footer">
+        © Groundberry {year}
+      </small>
     );
   }
 }

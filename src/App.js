@@ -15,8 +15,12 @@ class App extends Component {
 
     this.state = {
       firstHalf: firstHalf,
-      secondHalves: Object.values(props.rhymes)
-    }
+      secondHalves: Object.values(props.rhymes),
+      selection: null,
+      correct: false
+    };
+
+    this.checkSentence = this.checkSentence.bind(this);
   }
 
   render() {
@@ -25,11 +29,25 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <FirstHalf value={state.firstHalf}/>
-        <SecondHalves values={state.secondHalves}/>
+        <FirstHalf
+          value={state.firstHalf}
+        />
+        <SecondHalves
+          values={state.secondHalves}
+          selection={state.selection}
+          correct={state.correct}
+          onClick={this.checkSentence}
+        />
         <Footer />
       </div>
     );
+  }
+
+  checkSentence(value) {
+    this.setState({
+      selection: value,
+      correct: value === this.props.rhymes[this.state.firstHalf]
+    });
   }
 }
 

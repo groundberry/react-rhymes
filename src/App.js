@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import FirstHalf from './FirstHalf';
+import SecondHalves from './SecondHalves';
 import './App.css';
 
 class App extends Component {
@@ -9,26 +11,22 @@ class App extends Component {
 
     const keys = Object.keys(props.rhymes);
     const index = Math.floor(Math.random() * keys.length);
-    const currentKey = keys[index];
+    const firstHalf = keys[index];
 
     this.state = {
-      key: currentKey,
-      values: Object.values(props.rhymes)
+      firstHalf: firstHalf,
+      secondHalves: Object.values(props.rhymes)
     }
   }
 
   render() {
+    const state = this.state;
+
     return (
       <div className="App">
         <Header />
-        <p className="App-key">
-          {this.state.key}
-        </p>
-        <ul className="App-values">
-          {this.state.values.map((value) =>
-            <li>{value}</li>
-          )}
-        </ul>
+        <FirstHalf value={state.firstHalf}/>
+        <SecondHalves values={state.secondHalves}/>
         <Footer />
       </div>
     );

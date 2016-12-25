@@ -43,7 +43,9 @@ class App extends Component {
     );
   }
 
-  checkSentence(value) {
+  checkSentence(value, evt) {
+    evt.preventDefault();
+
     this.setState({
       selection: value,
       correct: value === this.props.rhymes[this.state.firstHalf]

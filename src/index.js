@@ -7,7 +7,8 @@ const rhymes = {
   'La nutria come pescado...': '... y atraviesa el río a nado.',
   'Ruge estático el león...': '... feroz, aunque mayestático.',
   'Más que a muchos señorones...': '... gusta un libro a los ratones.',
-  'Presume cuando va llena...': '... del surtidor la ballena.'
+  'Presume cuando va llena...': '... del surtidor la ballena.',
+  'La vaca su leche daca...': '... y nuestro apetito aplaca.'
 };
 
 ReactDOM.render(
